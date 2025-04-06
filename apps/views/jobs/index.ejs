@@ -1,0 +1,13 @@
+<%- include('../partials/header', { title: 'Danh Sách Việc Làm' }) %>
+
+    <h2>Danh sách việc làm</h2>
+    <ul>
+        <% jobs.forEach(job=> { %>
+            <li>
+                <a href="/api/jobs/<%= job._id %>">
+                    <%= job.title %> tại <%= job.company %>
+                </a>
+            </li>
+            <% }) %>
+    </ul>
+    <%- include('../partials/footer') %>
