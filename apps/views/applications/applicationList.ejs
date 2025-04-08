@@ -1,0 +1,13 @@
+<h1>
+  <%= title %>
+</h1>
+<ul>
+  <% applications.forEach(function(application) { %>
+    <li>
+      <a href="/view/applications/<%= application.id %>">Ứng viên: <%= application.candidateName %> - Công việc: <%=
+            application.jobTitle %></a>
+      <a href="/edit/applications/<%= application.id %>">Sửa</a>
+      <a href="/delete/applications/<%= application.id %>">Xóa</a>
+    </li>
+    <% }); %>
+</ul>

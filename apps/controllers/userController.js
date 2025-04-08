@@ -22,16 +22,20 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
     try {
         const { token, user } = await userService.loginUser(req.body);
-        res.status(200).json({
-            message: 'Đăng nhập thành công',
-            token,
-            user,
-        });
+
+        // Lưu token vào cookie
+        res.cookie('token', token, { httpOnly: true });
+
+        // Chuyển hướng về home và báo thành công
+        res.redirect('/?login=success');
+
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        res.status(400).render('users/userLogin', {
+            title: 'Đăng nhập',
+            error: error.message
+        });
     }
 };
-
 // Lấy thông tin user (dựa trên userId đã xác thực)
 exports.getProfile = async (req, res) => {
     try {

@@ -1,0 +1,12 @@
+<h1>
+    <%= title %>
+</h1>
+<form action="/update/employers/<%= employer.id %>" method="POST">
+    <label for="name">Tên nhà tuyển dụng:</label>
+    <input type="text" id="name" name="name" value="<%= employer.name %>" required>
+    <label for="company">Công ty:</label>
+    <input type="text" id="company" name="company" value="<%= employer.company %>" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="<%= employer.email %>" required>
+    <button type="submit">Cập nhật</button>
+</form>

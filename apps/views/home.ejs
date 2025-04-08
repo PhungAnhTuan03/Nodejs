@@ -1,37 +1,8 @@
-<%- include('partials/header', { title: 'Trang chủ' }) %>
+<h1>
+    <%= title %>
+</h1>
+<% if (login==='success' ) { %>
+    <p style="color: green;">Đăng nhập thành công!</p>
+    <% } %>
 
-    <h1>Chào mừng đến với trang tuyển dụng!</h1>
-
-    <!-- Thanh tìm kiếm -->
-    <form action="/search" method="GET">
-        <input type="text" name="q" placeholder="Tìm kiếm công việc..." />
-        <button type="submit">Tìm kiếm</button>
-    </form>
-
-    <!-- Danh sách việc làm -->
-    <h2>Danh sách công việc mới nhất</h2>
-    <ul>
-        <% if (jobs && jobs.length> 0) { %>
-            <% jobs.forEach(job=> { %>
-                <li>
-                    <h3>
-                        <%= job.title %>
-                    </h3>
-                    <p><strong>Địa điểm:</strong>
-                        <%= job.location %>
-                    </p>
-                    <p><strong>Loại công việc:</strong>
-                        <%= job.employmentType %>
-                    </p>
-                    <p><strong>Lương:</strong>
-                        <%= job.salary %> VND
-                    </p>
-                    <a href="/jobs/<%= job._id %>">Xem chi tiết</a>
-                </li>
-                <% }) %>
-                    <% } else { %>
-                        <p>Không có công việc nào được tìm thấy.</p>
-                        <% } %>
-    </ul>
-
-    <%- include('partials/footer') %>
+        <p>Chào mừng đến với cổng thông tin việc làm!</p>

@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <title>
-        <%= title || 'Website Tuyển Dụng' %>
-    </title>
-</head>
-
-<body>
-    <header>
-        <h2>🌐 Website Tuyển Dụng</h2>
+<header>
+    <div class="container">
+        <h1><a href="/">My Job Portal</a></h1>
         <nav>
-            <a href="/">Trang chủ</a>
-            <a href="../jobs/index.ejs">Việc làm</a>
-            <a href="../login.ejs">Login</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/search">Search Jobs</a></li>
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Register</a></li>
+            </ul>
         </nav>
-    </header>
-    <main>
+    </div>
+</header>

@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job List</title>
-</head>
-
-<body>
-    <h1>Job Listings</h1>
-    <!-- Hiển thị danh sách công việc ở đây -->
-</body>
-
-</html>
+<h1>
+    <%= title %>
+</h1>
+<% if (jobs.length> 0) { %>
+    <ul>
+        <% jobs.forEach(job=> { %>
+            <li>
+                <a href="/jobs/<%= job._id %>">
+                    <%= job.title %>
+                </a>
+                <p>
+                    <%= job.companyName %>
+                </p>
+            </li>
+            <% }); %>
+    </ul>
+    <% } else { %>
+        <p>Không tìm thấy công việc phù hợp.</p>
+        <% } %>

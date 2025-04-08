@@ -33,6 +33,8 @@ router.post('/jobs', jobController.createJob);
 router.get('/jobs/:id', jobController.getJob);
 router.put('/jobs/:id', jobController.updateJob);
 router.delete('/jobs/:id', jobController.deleteJob);
+// Thêm route tìm kiếm job
+router.get('/jobs/search', jobController.searchJobs);
 
 // Application routes
 router.get('/applications', verifyToken, applicationController.getAllApplications);

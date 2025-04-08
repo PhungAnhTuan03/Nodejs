@@ -1,0 +1,14 @@
+<h1>
+    <%= title %>
+</h1>
+<ul>
+    <% users.forEach(function(user) { %>
+        <li>
+            <a href="/view/users/<%= user.id %>">
+                <%= user.name %> - <%= user.email %>
+            </a>
+            <a href="/edit/users/<%= user.id %>">Sửa</a>
+            <a href="/delete/users/<%= user.id %>">Xóa</a>
+        </li>
+        <% }); %>
+</ul>

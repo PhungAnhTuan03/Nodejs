@@ -1,7 +1,0 @@
-{
-  "mongodb": {
-    "username": "sa",
-    "passwork": "sa",
-    "database": "findjobs"
-  }
-}

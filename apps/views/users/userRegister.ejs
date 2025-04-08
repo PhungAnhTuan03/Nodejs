@@ -1,0 +1,60 @@
+<h1>
+    <%= title %>
+</h1>
+
+<% if (error) { %>
+    <p style="color:red;">
+        <%= error %>
+    </p>
+    <% } %>
+        <% if (success) { %>
+            <p style="color:green;">
+                <%= success %>
+            </p>
+            <% } %>
+
+                <form action="/users/register" method="POST">
+                    <label for="name">Tên người dùng:</label>
+                    <input type="text" id="username" name="username" required><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" name="password" required><br>
+
+                    <label for="role">Chọn vai trò:</label>
+                    <select name="role" id="role" required>
+                        <option value="candidate">Ứng viên</option>
+                        <option value="employer">Nhà tuyển dụng</option>
+                        <option value="admin">Admin</option>
+                    </select><br>
+
+                    <!-- Các trường nhập thêm nếu là Employer -->
+                    <div id="employerFields" style="display:none;">
+                        <label for="companyName">Tên công ty:</label>
+                        <input type="text" id="companyName" name="companyName"><br>
+
+                        <label for="contactInfo">Thông tin liên hệ:</label>
+                        <input type="text" id="contactInfo" name="contactInfo"><br>
+                    </div>
+
+                    <!-- Các trường nhập thêm nếu là Candidate -->
+                    <div id="candidateFields" style="display:none;">
+                        <label for="fullName">Tên đầy đủ:</label>
+                        <input type="text" id="fullName" name="fullName"><br>
+
+                        <label for="resume">Sơ yếu lý lịch:</label>
+                        <input type="text" id="resume" name="resume"><br>
+                    </div>
+
+                    <button type="submit">Đăng ký</button>
+                </form>
+
+                <script>
+                    document.getElementById('role').addEventListener('change', function () {
+                        var role = this.value;
+                        document.getElementById('employerFields').style.display = role === 'employer' ? 'block' : 'none';
+                        document.getElementById('candidateFields').style.display = role === 'candidate' ? 'block' : 'none';
+                    });
+                </script>

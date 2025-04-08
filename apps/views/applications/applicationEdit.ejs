@@ -1,0 +1,8 @@
+<h1>
+    <%= title %>
+</h1>
+<form action="/update/applications/<%= application.id %>" method="POST">
+    <label for="status">Trạng thái:</label>
+    <input type="text" id="status" name="status" value="<%= application.status %>" required>
+    <button type="submit">Cập nhật</button>
+</form>

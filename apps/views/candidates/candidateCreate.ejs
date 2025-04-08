@@ -1,0 +1,10 @@
+<h1>
+    <%= title %>
+</h1>
+<form action="/create/candidates" method="POST">
+    <label for="name">Tên:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="resume">Hồ sơ:</label>
+    <textarea id="resume" name="resume" required></textarea>
+    <button type="submit">Tạo ứng viên</button>
+</form>

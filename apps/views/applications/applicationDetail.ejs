@@ -1,0 +1,14 @@
+<h1>
+    <%= title %>
+</h1>
+<div>
+    <p>ID: <%= application.id %>
+    </p>
+    <p>Ứng viên: <%= application.candidateName %>
+    </p>
+    <p>Công việc: <%= application.jobTitle %>
+    </p>
+    <p>Trạng thái: <%= application.status %>
+    </p>
+    <a href="/edit/applications/<%= application.id %>">Chỉnh sửa</a>
+</div>

@@ -1,0 +1,10 @@
+<h1>
+    <%= title %>
+</h1>
+<form action="/update/candidates/<%= candidate.id %>" method="POST">
+    <label for="name">Tên:</label>
+    <input type="text" id="name" name="name" value="<%= candidate.name %>" required>
+    <label for="resume">Hồ sơ:</label>
+    <textarea id="resume" name="resume" required><%= candidate.resume %></textarea>
+    <button type="submit">Cập nhật</button>
+</form>

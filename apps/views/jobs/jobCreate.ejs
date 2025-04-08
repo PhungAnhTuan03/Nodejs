@@ -1,0 +1,12 @@
+<h1>
+    <%= title %>
+</h1>
+<form action="/api/jobs/create" method="POST">
+    <label for="title">Tiêu đề công việc:</label>
+    <input type="text" id="title" name="title" required>
+    <label for="company">Công ty:</label>
+    <input type="text" id="company" name="company" required>
+    <label for="description">Mô tả công việc:</label>
+    <textarea id="description" name="description" required></textarea>
+    <button type="submit">Tạo công việc</button>
+</form>

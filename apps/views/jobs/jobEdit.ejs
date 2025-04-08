@@ -1,0 +1,12 @@
+<h1>
+    <%= title %>
+</h1>
+<form action="/update/jobs/<%= job.id %>" method="POST">
+    <label for="title">Tiêu đề công việc:</label>
+    <input type="text" id="title" name="title" value="<%= job.title %>" required>
+    <label for="company">Công ty:</label>
+    <input type="text" id="company" name="company" value="<%= job.company %>" required>
+    <label for="description">Mô tả công việc:</label>
+    <textarea id="description" name="description" required><%= job.description %></textarea>
+    <button type="submit">Cập nhật</button>
+</form>

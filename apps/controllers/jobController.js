@@ -61,3 +61,23 @@ exports.getAllJobs = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+// Controller xử lý tìm kiếm công việc
+exports.searchJobs = async (req, res) => {
+    const { query } = req.query;  // Lấy query tìm kiếm từ tham số URL
+
+    if (!query) {
+        return res.status(400).send('Missing search query');
+    }
+
+    try {
+        // Gọi hàm tìm kiếm công việc từ jobSearchControl
+        const jobs = await jobSearchControl.searchJobs(query);
+
+        // Render kết quả lên giao diện
+        res.render('jobs/jobList', { jobs: jobs, title: `Kết quả tìm kiếm cho: ${query}` });
+    } catch (error) {
+        console.error('Error searching jobs:', error);
+        res.status(500).send('Có lỗi khi tìm kiếm công việc');
+    }
+};

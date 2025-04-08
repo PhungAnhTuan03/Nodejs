@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <form action="/search" method="GET" class="search-form">
+                    <input type="text" name="query" placeholder="Tìm kiếm..." required>
+                    <button type="submit">Tìm</button>
+                </form>
+                <li><a href="/users/register">Đăng ký</a></li>
+                <li><a href="/users/login">Đăng nhập</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <%- body %> <!-- Đây là nơi hiển thị nội dung từ view -->
+    </main>
+
+    <footer>
+        <p>© 2025 JobHub. Tất cả quyền lợi được bảo lưu.</p>
+    </footer>
+</body>
+
+</html>
